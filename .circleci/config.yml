@@ -7,6 +7,7 @@ jobs:
       - image: circleci/python:3.8.2 # primary container for the build job
     steps:
       - checkout
+      - run: mkdir test-reports
       - restore_cache:
           key: deps-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
