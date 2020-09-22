@@ -1,3 +1,6 @@
 .env
-/test-reports
-/BigBuyPy/__pycache__
+test-reports/
+BigBuyPy/__pycache__/
+BigBuyPy.egg-info/
+build/
+dist/
