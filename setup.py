@@ -11,7 +11,12 @@ with open("BigBuyPy/__init__.py", "r") as fh:
 version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                     version_file,
                     re.MULTILINE).group(1)
+
+if not version:
+    raise RuntimeError('Cannot find version information')
+
 print(version)
+
 setuptools.setup(
     name="BigBuyPy",  # Replace with your own username
     version=version,
