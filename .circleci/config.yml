@@ -10,7 +10,8 @@ jobs:
       - restore_cache:
           key: deps-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
-          command: python3 -m venv venv
+          command: |
+            python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
       - save_cache:
