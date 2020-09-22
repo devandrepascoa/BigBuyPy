@@ -1,9 +1,11 @@
 version: 2.1
 
+orbs:
+  python: circleci/python@0.2.1
+
 jobs:
   build-and-test:
-    docker:
-      - image: circleci/python:3.8.2
+    executor: python/default
     steps:
       - checkout
       - python/load-cache
@@ -17,4 +19,3 @@ workflows:
   main:
     jobs:
       - build-and-test
-  version: 2
