@@ -23,3 +23,8 @@ jobs:
           command: |
             . venv/bin/activate
             python3 manager.py
+      - store_artifacts:
+          path: test-reports/
+          destination: tr1
+      - store_test_results:
+          path: test-reports/
