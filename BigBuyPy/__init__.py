@@ -6,7 +6,7 @@ from ._tracking_api_methods import TrackingMixin
 from ._user_api_methods import UserMixin
 
 valid_formats = ["json", "xml", "html"]
-__version__ = "0.0.3"
+__version__ = "0.0.2"
 
 
 def formatIsValid(response_format: str):
