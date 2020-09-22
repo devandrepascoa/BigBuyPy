@@ -19,7 +19,7 @@ class CatalogMixin:
             data,
             headers={"Authorization": self.api_key},
         )
-        return response.json()
+        return response
 
 
 def skuListIsValid(sku_list: list):
@@ -35,7 +35,7 @@ def createTemplateFunctionType1(endpoint):
             params={"_format": "json"},
             headers={"Authorization": self.api_key},
         )
-        return response.json()
+        return response
 
     return function_template
 
@@ -44,11 +44,11 @@ def createTemplateFunctionType2(endpoint):
     def function_template(self, id: int):
         assert isinstance(id, int), "Invalid ID, must be an integer"
         response = requests.get(
-            self.chosen_endpoint + endpoint,
-            params={"_format": "json", "id": id},
+            self.chosen_endpoint + endpoint + "/" + str(id),
+            params={"_format": "json"},
             headers={"Authorization": self.api_key},
         )
-        return response.json()
+        return response
 
     return function_template
 
@@ -70,8 +70,8 @@ funcs_type2 = {
     "getTag": "/rest/catalog/tag",
     "getTagAllLanguages": "/rest/catalog/tagalllanguages",
     "getVariation": "/rest/catalog/variation",
-    "getAttribute": "/rest/catalog/attribute/",
-    "getAttributeAllLanguages": "/rest/catalog/attributealllanguages/",
+    "getAttribute": "/rest/catalog/attribute",
+    "getAttributeAllLanguages": "/rest/catalog/attributealllanguages",
     "getAttributeGroup": "/rest/catalog/attributegroup",
     "getAttributeGroupAllLanguages": "/rest/catalog/attributegroupalllanguages",
 }

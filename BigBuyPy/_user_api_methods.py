@@ -9,4 +9,4 @@ class UserMixin:
         response = requests.get(self.chosen_endpoint + "/rest/user/purse",
                                 params={"_format": 'json'},
                                 headers={"Authorization": self.api_key})
-        return response.json()
+        return response

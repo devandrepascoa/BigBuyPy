@@ -9,10 +9,10 @@ class OrderMixin:
         response = requests.get(self.chosen_endpoint + "/rest/order/addresses/new",
                                 params={"_format": 'json'},
                                 headers={"Authorization": self.api_key})
-        return response.json()
+        return response
 
     def getOrderCarriersStructure(self):
         response = requests.get(self.chosen_endpoint + "/rest/order/carriers/new",
                                 params={"_format": 'json'},
                                 headers={"Authorization": self.api_key})
-        return response.json()
+        return response

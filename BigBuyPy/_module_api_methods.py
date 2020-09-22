@@ -9,10 +9,10 @@ class ModuleMixin:
         response = requests.get(self.chosen_endpoint + "/rest/module/",
                                 params={"_format": 'json'},
                                 headers={"Authorization": self.api_key})
-        return response.json()
+        return response
 
     def getAllModulePlatforms(self):
         response = requests.get(self.chosen_endpoint + "/rest/module/platforms",
                                 params={"_format": 'json'},
                                 headers={"Authorization": self.api_key})
-        return response.json()
+        return response
